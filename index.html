@@ -14,6 +14,8 @@
             --light-color: #ecf0f1;
             --success-color: #27ae60;
             --roblox-red: #e74c3c;
+            --whatsapp-color: #25D366;
+            --offline-color: #95a5a6;
         }
         
         body {
@@ -119,57 +121,129 @@
             margin-bottom: 20px;
         }
         
-        /* Products Section */
-        .products {
+        /* Admin Section */
+        .admin-section {
             padding: 80px 0;
             background-color: #f0f2f5;
         }
         
-        .product-card {
+        .admin-card {
             background: white;
             border-radius: 10px;
-            overflow: hidden;
+            padding: 30px;
+            text-align: center;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             transition: all 0.3s;
             height: 100%;
+            position: relative;
         }
         
-        .product-card:hover {
+        .admin-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        .product-placeholder {
-            height: 200px;
-            background: linear-gradient(45deg, #f0f2f5, #e9ecef);
+        .admin-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--roblox-red), var(--secondary-color));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: #adb5bd;
-        }
-        
-        .product-body {
-            padding: 20px;
-        }
-        
-        .product-title {
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .product-price {
-            color: var(--roblox-red);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-        
-        .badge-robux {
-            background-color: var(--roblox-red);
             color: white;
-            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin: 0 auto 20px;
+        }
+        
+        .admin-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: var(--success-color);
+            color: white;
             border-radius: 20px;
             font-size: 0.8rem;
+            margin-top: 10px;
+        }
+        
+        .admin-info {
+            margin: 15px 0;
+        }
+        
+        .admin-info p {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .admin-info strong {
+            color: var(--dark-color);
+        }
+        
+        .whatsapp-btn {
+            background-color: var(--whatsapp-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #1ebe57;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            color: white;
+        }
+        
+        .online-indicator {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 15px;
+            height: 15px;
+            background-color: var(--success-color);
+            border-radius: 50%;
+            border: 3px solid white;
+            animation: pulse 2s infinite;
+        }
+        
+        .offline-indicator {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 15px;
+            height: 15px;
+            background-color: var(--offline-color);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(39, 174, 96, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(39, 174, 96, 0);
+            }
+        }
+        
+        .offline-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: var(--offline-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
         }
         
         /* Testimonials */
@@ -212,51 +286,6 @@
             color: white;
             font-weight: bold;
             font-size: 1.2rem;
-        }
-        
-        /* Admin Section */
-        .admin-section {
-            padding: 80px 0;
-            background-color: #f0f2f5;
-        }
-        
-        .admin-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            height: 100%;
-        }
-        
-        .admin-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .admin-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--roblox-red), var(--secondary-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 2.5rem;
-            margin: 0 auto 20px;
-        }
-        
-        .admin-badge {
-            display: inline-block;
-            padding: 5px 15px;
-            background-color: var(--success-color);
-            color: white;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 10px;
         }
         
         /* Footer */
@@ -314,8 +343,12 @@
                 display: none;
             }
             
-            .features, .products, .testimonials, .admin-section {
+            .features, .testimonials, .admin-section {
                 padding: 60px 0;
+            }
+            
+            .admin-info {
+                text-align: left;
             }
         }
     </style>
@@ -416,105 +449,61 @@
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Popular Roblox Items</h2>
-                <p class="lead text-muted">Discover the most sought-after items in the Roblox universe</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="product-card">
-                        <div class="product-placeholder">
-                            <i class="fas fa-crown"></i>
-                        </div>
-                        <div class="product-body">
-                            <span class="badge-robux">Limited</span>
-                            <h5 class="product-title">Dominus Empyreus</h5>
-                            <p class="text-muted">Rare limited hat with unique design</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="product-price">R$ 1,200,000</span>
-                                <a href="#" class="btn btn-sm btn-primary">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="product-card">
-                        <div class="product-placeholder">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="product-body">
-                            <span class="badge-robux">Game Pass</span>
-                            <h5 class="product-title">Super Speed Boost</h5>
-                            <p class="text-muted">Permanent 2x speed multiplier</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="product-price">R$ 450</span>
-                                <a href="#" class="btn btn-sm btn-primary">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="product-card">
-                        <div class="product-placeholder">
-                            <i class="fas fa-sword"></i>
-                        </div>
-                        <div class="product-body">
-                            <span class="badge-robux">Accessory</span>
-                            <h5 class="product-title">Shadow Blade</h5>
-                            <p class="text-muted">Epic sword with glowing effects</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="product-price">R$ 15,000</span>
-                                <a href="#" class="btn btn-sm btn-primary">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-5">
-                <a href="#" class="btn btn-primary">View All Items</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Admin Section -->
     <section class="admin-section">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold">Our Trusted Admin Team</h2>
-                <p class="lead text-muted">Meet the professionals who keep our marketplace safe</p>
+                <p class="lead text-muted">Meet the professionals who keep our marketplace safe and secure</p>
             </div>
             
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="admin-card">
-                        <div class="admin-avatar">JD</div>
-                        <h5>John Davis</h5>
-                        <p class="text-muted">Head Administrator</p>
-                        <p>5+ years of experience in Roblox trading and community management.</p>
-                        <span class="admin-badge">Verified</span>
+                        <div class="online-indicator"></div>
+                        <div class="admin-avatar">AK</div>
+                        <h5>Alexander Knight</h5>
+                        <p class="text-muted">Chief Executive Officer</p>
+                        <div class="admin-info">
+                            <p><strong>Experience:</strong> 8+ years</p>
+                            <p><strong>Specialization:</strong> Platform Security & Trading Systems</p>
+                            <p><strong>Response Time:</strong> < 15 minutes</p>
+                            <p><strong>Available:</strong> 24/7</p>
+                        </div>
+                        <span class="admin-badge">Level 5 Admin</span>
+                        <a href="https://wa.me/6285702402751?text=Hi%20Alexander,%20I%20need%20help%20with%20RobloXchange" target="_blank" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="admin-card">
-                        <div class="admin-avatar">SM</div>
-                        <h5>Sarah Miller</h5>
-                        <p class="text-muted">Security Manager</p>
-                        <p>Specializes in fraud prevention and transaction security.</p>
-                        <span class="admin-badge">Verified</span>
+                        <div class="offline-indicator"></div>
+                        <div class="admin-avatar">SC</div>
+                        <h5>Sophia Chen</h5>
+                        <p class="text-muted">Head of Security</p>
+                        <div class="admin-info">
+                            <p><strong>Experience:</strong> 6+ years</p>
+                            <p><strong>Specialization:</strong> Fraud Prevention & Account Verification</p>
+                            <p><strong>Response Time:</strong> < 30 minutes</p>
+                            <p><strong>Available:</strong> Mon-Sat, 8AM-10PM</p>
+                        </div>
+                        <span class="offline-badge">Offline</span>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="admin-card">
-                        <div class="admin-avatar">MJ</div>
-                        <h5>Michael Johnson</h5>
+                        <div class="offline-indicator"></div>
+                        <div class="admin-avatar">MR</div>
+                        <h5>Marcus Rodriguez</h5>
                         <p class="text-muted">Community Manager</p>
-                        <p>Dedicated to providing excellent customer support and dispute resolution.</p>
-                        <span class="admin-badge">Verified</span>
+                        <div class="admin-info">
+                            <p><strong>Experience:</strong> 5+ years</p>
+                            <p><strong>Specialization:</strong> Customer Support & Dispute Resolution</p>
+                            <p><strong>Response Time:</strong> < 1 hour</p>
+                            <p><strong>Available:</strong> Daily, 9AM-11PM</p>
+                        </div>
+                        <span class="offline-badge">Offline</span>
                     </div>
                 </div>
             </div>
@@ -721,18 +710,6 @@
                 card.style.transform = 'translateY(20px)';
                 card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 observer.observe(card);
-            });
-            
-            // Product card hover effect
-            const productCards = document.querySelectorAll('.product-card');
-            productCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.querySelector('.btn-primary').classList.add('btn-lg');
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.querySelector('.btn-primary').classList.remove('btn-lg');
-                });
             });
             
             // Rating star interaction in modal
